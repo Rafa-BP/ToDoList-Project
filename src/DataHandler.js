@@ -1,9 +1,3 @@
-class Project {
-    constructor(title) {
-        this.title
-    };
-;}
-
 class Todo {
     constructor(title, priority) {
         this.title,
@@ -16,20 +10,11 @@ function GetProjects() {
 };
 
 export function CreateNewProject(title) {
-    let newProject = new Project(title);
-
-    let currentProjects = GetProjects();
-
-    if (currentProjects) {
-        let newList = JSON.stringify(currentProjects + newProject.title);
-        localStorage.setItem("projects", newList);
-    } else {
-        let test = JSON.stringify(newProject.title);
-        localStorage.setItem("projects", test);
-    }
-    
+    let projects = JSON.parse(GetProjects()) || [];
+    projects.push(title);
+    localStorage.setItem("projects", JSON.stringify(projects));
 }
 
-export function CreateNewTodo(title, ) {
+export function CreateNewTodo(title) {
 
 };

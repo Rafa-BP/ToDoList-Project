@@ -6,6 +6,7 @@ const btnNewProject = document.getElementById("btnNewProject");;
 
 btnNewProject.addEventListener('click', () => {
     ClearProjects();
+    CreateProjects();
     CreateProjectPrompt();
 });
 
@@ -14,3 +15,5 @@ document.addEventListener('click', e => {
 
     };
 }); 
+
+CreateProjects();

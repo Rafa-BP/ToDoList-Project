@@ -13,7 +13,11 @@ export function ClearProjects() {
 }
 
 export function CreateProjects() {
+    let projects = JSON.parse(localStorage.getItem("projects")) || [];
 
+    for (const project of projects) {
+        CreateProjectElement(project);
+    };
 };
 
 function CreateProjectElement(title) {
@@ -53,6 +57,7 @@ export function CreateProjectPrompt() {
         CreateProjectElement(title);
 
         ClearProjects();
+        CreateProjects();
     });
 
     let btnCancel = document.createElement("button");
@@ -61,6 +66,7 @@ export function CreateProjectPrompt() {
 
     btnCancel.addEventListener('click', () => {
         ClearProjects();
+        CreateProjects();
     });
 
 
