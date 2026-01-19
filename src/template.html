@@ -22,7 +22,30 @@
         </aside>
 
         <main id="container-main">
+            <h1 id="projectTitle">Project Name</h1>
+            <section id="menu">
+                <form id="todoCreation" method="post">
+                    <label for="todoTitle">Title: </label>
+                    <input type="text" id="todoTitle" name="todo_title" required>
 
+                    <label for="todoDate">Due By: </label>
+                    <input type="date" id="todoDate" name="todo_date" required>         
+
+                    <label for="todoPriority">Priority: </label>
+                    <select name="todo_priority" id="todoPriority">
+                        <option value="urgent" selected>Urgent</option>
+                        <option value="high">High Priority</option>
+                        <option value="medium">Medium Priority</option>
+                        <option value="low">Low Priority</option>
+                        <option value="optional">Optional</option>
+                    </select> 
+                    
+                    <label for="todoDesc">Description: </label>
+                    <textarea name="todo_desc" id="todoDesc"></textarea>
+
+                    <button type="submit" id="btnCreateTodo">Create New To-Do</button>
+                </form>
+            </section>
         </main>
     </body>
 </html>

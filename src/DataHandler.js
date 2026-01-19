@@ -1,10 +1,6 @@
-class Todo {
-    constructor(title, priority) {
-        this.title,
-        this.priority
-    };
-};
 
+// Projects
+ 
 function GetProjects() {
     return localStorage.getItem("projects");
 };
@@ -15,6 +11,12 @@ export function CreateNewProject(title) {
     localStorage.setItem("projects", JSON.stringify(projects));
 }
 
-export function CreateNewTodo(title) {
+// To-dos
 
+function GetTodos(project) {
+    return localStorage.getItem(project);
+}
+
+export function CreateNewTodo(project) {
+    
 };

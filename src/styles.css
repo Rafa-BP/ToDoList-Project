@@ -84,3 +84,40 @@
 
     font-size: medium;
 }
+
+#menu,
+#todoCreation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    max-width: calc(100% - 0.2rem);
+    min-height: 2rem;
+    
+    padding: 0.2rem;
+    margin: 0.3rem;
+
+    border: 0.12rem solid black;
+    border-radius: 10px;
+}
+
+#todoCreation > *{
+    padding: 0.5rem;
+}
+#todoCreation > input, #todoCreation > select{
+    max-height: 1.5rem;
+    padding: 0px;
+}
+
+#btnCreateTodo {
+    padding: 0px;
+    height: 1.5rem;
+    min-width: 8rem;
+    margin: 1rem;
+}
+
+#todoDesc {
+    width: 30rem;
+    height: 1.5rem;
+    padding: 0.1rem;
+}

@@ -3,6 +3,8 @@ import { CreateNewProject } from "./DataHandler";
 
 const projectsContainer = document.getElementById("projects-container")
 const main = document.getElementById("container-main")
+ 
+// Projects
 
 function AppendProject(project) {
     projectsContainer.appendChild(project);
@@ -29,8 +31,9 @@ function CreateProjectElement(title) {
 };
 
 export function CreateProjectPrompt() {
-    let newPrompt = document.createElement("section");
+    let newPrompt = document.createElement("form");
     newPrompt.id = "newProjectPrompt";
+    newPrompt.method = "post";
 
     let titleLabel = document.createElement("label");
     titleLabel.for = "newProjectTitle";
@@ -39,6 +42,7 @@ export function CreateProjectPrompt() {
     let titleInput = document.createElement("input");
     titleInput.type = "text";
     titleInput.id = "newProjectTitle";
+    titleInput.name = "prompt_title";
 
     newPrompt.appendChild(titleLabel);
     newPrompt.appendChild(titleInput);
@@ -49,9 +53,10 @@ export function CreateProjectPrompt() {
     let btnCreate = document.createElement("button");
     btnCreate.id = "btnAddProject";
     btnCreate.textContent = "Add";
+    btnCreate.type = "submit";
 
-    btnCreate.addEventListener('click', () => {
-        let title = titleInput.value;
+    newPrompt.addEventListener('submit', () => {
+        let title = newPrompt.prompt_title.value;
 
         CreateNewProject(title);
         CreateProjectElement(title);
@@ -69,7 +74,6 @@ export function CreateProjectPrompt() {
         CreateProjects();
     });
 
-
     btnDiv.appendChild(btnCreate);
     btnDiv.appendChild(btnCancel);
 
@@ -78,3 +82,8 @@ export function CreateProjectPrompt() {
     projectsContainer.appendChild(newPrompt);
 };
 
+// To-dos
+
+function CreateTodos() {
+    
+};
