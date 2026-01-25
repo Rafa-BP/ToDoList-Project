@@ -5,47 +5,54 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>To-Do List</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     </head>
 
-    <body style="display: flex;">
-
-        <aside id="projects-display">
-            <header>
-                <h2>Your Projects</h2>
-                <button id="btnNewProject">Add New Project</button>
-                <hr>
-            </header>   
-
-            <main id="projects-container">
-
-            </main>
+    <body id="grid-main">
+        <aside id="dashboard" style="color: white;">
+            <h1>Your Projects</h1>
+            <div id="projects-container">
+                <button class="project">Cool</button>
+                <button class="project">Cool</button>
+                <button class="project">Cool</button>
+            </div>
+            <form method="post" id="formProject">
+                <button id="formBtn">
+                    <img src="./static/plus.svg" alt="Plus Icon" class="icon">
+                    New Project
+                </button>
+            </form>
         </aside>
-
-        <main id="container-main">
+        <header id="header">
             <h1 id="projectTitle">Project Name</h1>
-            <section id="menu">
-                <form id="todoCreation" method="post">
-                    <label for="todoTitle">Title: </label>
-                    <input type="text" id="todoTitle" name="todo_title" required>
-
-                    <label for="todoDate">Due By: </label>
-                    <input type="date" id="todoDate" name="todo_date" required>         
-
-                    <label for="todoPriority">Priority: </label>
-                    <select name="todo_priority" id="todoPriority">
-                        <option value="urgent" selected>Urgent</option>
+            <form method="post" id="todoForm">
+                <div class="todo-row">
+                    <label for="title">Title: </label>
+                    <input type="text" class="todoInput" id="title" name="todo_title" required>
+                    <br style="margin: 1rem;">
+                    <label for="date">Due By: </label>
+                    <input type="date" class="todoInput" id="date" name="todo_date" required>
+                    <br style="margin: 1rem;">
+                    <label for="priority">Priority: </label>
+                    <select name="todo_priority" id="priority">
+                        <option value="urgent">Urgent</option>
                         <option value="high">High Priority</option>
                         <option value="medium">Medium Priority</option>
                         <option value="low">Low Priority</option>
-                        <option value="optional">Optional</option>
-                    </select> 
-                    
-                    <label for="todoDesc">Description: </label>
-                    <textarea name="todo_desc" id="todoDesc"></textarea>
+                        <option value="optinal">Optional</option>
+                    </select>
+                </div>
+                <div class="todo-row">
+                    <label for="desc">Description: </label>
+                    <textarea type="text" id="desc" name="todo_desc">
+                </div>
+            </form>
+            <button id="btnTodo" type="submit" form="todoForm">Create To-Do</button>
+        </header>
+        <main id="main">
 
-                    <button type="submit" id="btnCreateTodo">Create New To-Do</button>
-                </form>
-            </section>
         </main>
     </body>
 </html>
