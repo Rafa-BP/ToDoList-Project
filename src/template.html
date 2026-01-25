@@ -14,19 +14,23 @@
         <aside id="dashboard" style="color: white;">
             <h1>Your Projects</h1>
             <div id="projects-container">
-                <button class="project">Cool</button>
-                <button class="project">Cool</button>
-                <button class="project">Cool</button>
+
             </div>
             <form method="post" id="formProject">
-                <button id="formBtn">
-                    <img src="./static/plus.svg" alt="Plus Icon" class="icon">
-                    New Project
-                </button>
+                <div class="todo-row">
+                    <button id="formBtn">
+                        <img src="./static/plus.svg" alt="Plus Icon" class="icon">
+                        New Project
+                    </button>
+                </div>
+                <div class="todo-row">
+                    <label for="projectTitle">Title: </label>
+                    <input type="text" id="projectTitle" name="project_title" required>
+                </div>
             </form>
         </aside>
-        <header id="header">
-            <h1 id="projectTitle">Project Name</h1>
+        <header id="header" style="opacity: 0;">
+            <h1 id="projectIndicator"></h1>
             <form method="post" id="todoForm">
                 <div class="todo-row">
                     <label for="title">Title: </label>
@@ -37,11 +41,11 @@
                     <br style="margin: 1rem;">
                     <label for="priority">Priority: </label>
                     <select name="todo_priority" id="priority">
-                        <option value="urgent">Urgent</option>
-                        <option value="high">High Priority</option>
-                        <option value="medium">Medium Priority</option>
-                        <option value="low">Low Priority</option>
-                        <option value="optinal">Optional</option>
+                        <option value="Urgent">Urgent</option>
+                        <option value="High Prority">High Priority</option>
+                        <option value="Medium Prority">Medium Priority</option>
+                        <option value="Low Prority">Low Priority</option>
+                        <option value="Optional">Optional</option>
                     </select>
                 </div>
                 <div class="todo-row">
@@ -50,6 +54,7 @@
                 </div>
             </form>
             <button id="btnTodo" type="submit" form="todoForm">Create To-Do</button>
+            <button id="btnDelete">Delete Project</button>
         </header>
         <main id="main">
 
